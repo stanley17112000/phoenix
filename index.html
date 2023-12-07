@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location-Based AR Example</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar-nft.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs='sourceType: webcam; locationBased: true;'>
+        <!-- 3D model: Box at specific GPS coordinates -->
+        <a-box 
+            gps-entity-place="latitude: 34.232000; longitude: -119.010740;"
+            position="0 0 0" 
+            material="color: yellow; opacity: 0.7;"
+            scale="2 2 2">
+        </a-box>
+
+        <!-- Camera -->
+        <a-camera gps-camera="simulateLatitude: 34.232000; simulateLongitude: -119.010740;"></a-camera>
+    </a-scene>
+</body>
+</html>
